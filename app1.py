@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, Response
 from datetime import datetime
 
 # ---------- CONFIG ----------
-OPENROUTER_API_KEY = os.environ.get("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")
+OPENROUTER_API_KEY = os.environ.get(secrets.API)
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 MODEL = os.environ.get("OPENAI_MODEL", "openai/gpt-4o-mini")  # change if needed
 DATA_FILE = "chat_history.json"
@@ -597,3 +597,4 @@ if __name__ == "__main__":
     print("OPENROUTER_API_KEY loaded:", bool(OPENROUTER_API_KEY))
     print("Using model:", MODEL)
     app.run(host="0.0.0.0", port=8080, debug=True)
+

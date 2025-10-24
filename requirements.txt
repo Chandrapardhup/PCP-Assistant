@@ -1,2 +1,4 @@
 flask
-requests
+supabase
+python-dotenv
+pyjwt

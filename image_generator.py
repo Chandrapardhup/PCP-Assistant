@@ -5,14 +5,14 @@ import time
 
 class ImageService:
     def __init__(self):
-        self.token = os.environ.get("HUGGINGFACE_TOKEN")
+        self.token = ${secrets.HUGGINGFACE}
         self.models = {
             "stable_diffusion": "runwayml/stable-diffusion-v1-5",
             "flux": "black-forest-labs/FLUX.1-schnell",
             "sdxl": "stabilityai/stable-diffusion-xl-base-1.0"
         }
     
-    def generate(self, prompt, model="gpt-image-1"):
+    def generate(self, prompt, model="flux"):
         """Generate image from prompt with detailed debugging"""
         try:
             if not self.token:
@@ -76,4 +76,5 @@ class ImageService:
             return None
 
 # Create global instance
+
 image_service = ImageService()
